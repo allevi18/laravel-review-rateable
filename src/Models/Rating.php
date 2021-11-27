@@ -2,6 +2,7 @@
 
 namespace Codebyray\ReviewRateable\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -212,5 +213,10 @@ class Rating extends Model
                 ->firstOrFail();
 
         return $rating;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'author_id');
     }
 }
