@@ -139,7 +139,6 @@ class Rating extends Model
     {
         $rating = $this->select('*')
             ->where('reviewrateable_id', $id)
-            ->where('approved', true)
             ->orderBy('created_at', $sort)
             ->limit($limit)
             ->get();
