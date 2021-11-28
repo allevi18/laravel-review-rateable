@@ -88,8 +88,7 @@ class Rating extends Model
     {
         $rating = $this->select('*')
             ->where('reviewrateable_id', $id)
-            ->orderBy('created_at', $sort)
-            ->get();
+            ->orderBy('created_at', $sort);         
 
         return $rating;
     }
@@ -140,8 +139,7 @@ class Rating extends Model
         $rating = $this->select('*')
             ->where('reviewrateable_id', $id)
             ->orderBy('created_at', $sort)
-            ->limit($limit)
-            ->get();
+            ->limit($limit);
 
         return $rating;
     }
