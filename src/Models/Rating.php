@@ -2,6 +2,7 @@
 
 namespace Codebyray\ReviewRateable\Models;
 
+use App\Models\Listing;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
@@ -220,6 +221,11 @@ class Rating extends Model
 
     public function order(){
         return $this->belongsTo(Order::class, 'order_id');
+    }
+
+    public function listing()
+    {
+        return $this->belongsTo(Listing::class, 'listing_id');
     }
 
 }
